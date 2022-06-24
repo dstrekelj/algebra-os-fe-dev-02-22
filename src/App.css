@@ -4,14 +4,6 @@
 .form-field + .form-field {
   margin-top: 16px;
 }
-.label {
-  margin-bottom: 8px;
-}
-.input {
-  min-height: 32px;
-  border: 1px solid teal;
-  padding: 0 8px;
-}
 .button {
   min-height: 32px;
   border: 1px solid teal;

@@ -1,0 +1,8 @@
+.label {
+  margin-bottom: 8px;
+}
+.input {
+  min-height: 32px;
+  border: 1px solid teal;
+  padding: 0 8px;
+}

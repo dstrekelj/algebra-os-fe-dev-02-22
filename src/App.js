@@ -1,13 +1,5 @@
 import "./App.css";
-
-function InputElement({ label, type }) {
-  return (
-    <label>
-      <div className="label">{label}</div>
-      <input className="input" type={type} />
-    </label>
-  );
-}
+import { InputElement } from "./components/InputElement";
 
 function App() {
   return (
