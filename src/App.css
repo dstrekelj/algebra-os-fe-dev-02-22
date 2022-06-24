@@ -4,10 +4,3 @@
 .form-field + .form-field {
   margin-top: 16px;
 }
-.button {
-  min-height: 32px;
-  border: 1px solid teal;
-  background-color: teal;
-  color: white;
-  padding: 0 8px;
-}
