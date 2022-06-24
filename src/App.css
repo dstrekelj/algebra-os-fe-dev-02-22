@@ -9,13 +9,13 @@
 }
 .input {
   min-height: 32px;
-  border: 1px solid black;
+  border: 1px solid teal;
   padding: 0 8px;
 }
 .button {
   min-height: 32px;
-  border: 1px solid black;
-  background-color: black;
+  border: 1px solid teal;
+  background-color: teal;
   color: white;
   padding: 0 8px;
 }
