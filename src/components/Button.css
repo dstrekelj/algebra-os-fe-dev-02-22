@@ -5,3 +5,6 @@
   color: white;
   padding: 0 8px;
 }
+.button + .button {
+  margin-left: 4px;
+}
