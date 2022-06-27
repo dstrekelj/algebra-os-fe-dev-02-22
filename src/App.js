@@ -1,18 +1,8 @@
 import "./App.css";
 import { InputElement } from "./components/InputElement";
 import Button from "./components/Button";
-
-function FormError(props) {
-  if (!props.visible) return null;
-
-  return <div className="form-error">Failed to sign in!</div>;
-}
-
-function FormMessage(props) {
-  if (!props.visible) return null;
-
-  return <div className="form-message">Successfully signed in!</div>;
-}
+import FormError from "./components/FormError";
+import FormMessage from "./components/FormMessage";
 
 function App() {
   const isSignedIn = true;
