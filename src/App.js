@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <User src="/avatar.svg" username="Domagoj" />
+      {isSignedIn && <User src="/avatar.svg" username="Domagoj" />}
       <form className="form">
         <div className="form-field">
           <InputElement label="Username" type="text" />
