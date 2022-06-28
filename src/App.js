@@ -11,7 +11,8 @@ function App() {
 
   return (
     <div>
-      <Counter />
+      <Counter initialValue={0} />
+      <Counter initialValue={100} />
       {isSignedIn && <User src="/avatar.svg" username="Domagoj" />}
       <form className="form">
         <div className="form-field">
