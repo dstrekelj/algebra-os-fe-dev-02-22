@@ -30,6 +30,11 @@ function App() {
     }));
   }
 
+  const signOut = () => {
+    setUser(null);
+    setError(null);
+  }
+
   const isSignedIn = user !== null;
   const showErrorMessage = error !== null;
   const showFormMessage = user !== null;
@@ -38,6 +43,7 @@ function App() {
     <div>
       <Counter initialValue={0} />
       <Counter initialValue={100} />
+      {isSignedIn && <Button type="button" onClick={signOut}>Sign out</Button>}
       {isSignedIn && <User src="/avatar.svg" username={user.username} />}
       {!isSignedIn && <form className="form" onSubmit={handleSubmit}>
         <div className="form-field">
