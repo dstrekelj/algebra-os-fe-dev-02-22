@@ -39,7 +39,7 @@ function App() {
       <Counter initialValue={0} />
       <Counter initialValue={100} />
       {isSignedIn && <User src="/avatar.svg" username={user.username} />}
-      <form className="form" onSubmit={handleSubmit}>
+      {!isSignedIn && <form className="form" onSubmit={handleSubmit}>
         <div className="form-field">
           <InputElement name="username" label="Username" type="text" onChange={handleChange} />
         </div>
@@ -52,7 +52,7 @@ function App() {
         </div>
         <FormError visible={showErrorMessage} />
         <FormMessage visible={showFormMessage} />
-      </form>
+      </form>}
     </div>
   );
 }
