@@ -2,6 +2,7 @@ import "./Counter.css";
 import { useState } from "react";
 
 export function Counter(props) {
+  // const [counter, setCounter] = useState(props.initialValue);
   const counterState = useState(props.initialValue);
   const counter = counterState[0];
   const setCounter = counterState[1];
