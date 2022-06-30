@@ -48,7 +48,6 @@ function App() {
         </div>
         <div className="form-field">
           <Button type="submit">Sign in</Button>
-          <Button type="reset">Reset</Button>
         </div>
         <FormError visible={showErrorMessage} />
         <FormMessage visible={showFormMessage} />
