@@ -19,6 +19,7 @@ function App() {
     } else {
       setUser(formState);
       setError(null);
+      setFormState({ username: '' });
     }
   }
 
