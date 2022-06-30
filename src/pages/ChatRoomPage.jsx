@@ -23,7 +23,7 @@ export function ChatRoomPage(props) {
     }));
   }
 
-  console.log(messages);
+  const messageElements = messages.map((item) => <div>{item.message}</div>);
 
   return (
     <div>
@@ -41,6 +41,7 @@ export function ChatRoomPage(props) {
           <Button type="submit">Send</Button>
         </div>
       </form>
+      {messageElements}
     </div>
   );
 }
