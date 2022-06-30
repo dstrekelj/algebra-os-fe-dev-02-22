@@ -12,6 +12,7 @@ export function ChatRoomPage(props) {
 
     if (formState.message !== '') {
       setMessages((state) => [...state, formState]);
+      setFormState({ message: '' });
     }
   }
   
@@ -30,7 +31,11 @@ export function ChatRoomPage(props) {
       <User src="/avatar.svg" username={props.user.username} />
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-field">
-          <InputElement name="message" label="Message" type="text" onChange={handleChange} />
+          <InputElement name="message"
+            label="Message"
+            type="text"
+            onChange={handleChange}
+            value={formState.message} />
         </div>
         <div className="form-field">
           <Button type="submit">Send</Button>
