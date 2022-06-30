@@ -11,7 +11,10 @@ export function ChatRoomPage(props) {
     event.preventDefault();
 
     if (formState.message !== '') {
-      setMessages((state) => [...state, formState]);
+      setMessages((state) => [
+        ...state,
+        { ...formState, author: props.user.username },
+      ]);
       setFormState({ message: '' });
     }
   }
@@ -23,7 +26,12 @@ export function ChatRoomPage(props) {
     }));
   }
 
-  const messageElements = messages.map((item) => <div>{item.message}</div>);
+  const messageElements = messages.map((item, index) => (
+    <div key={index}>
+      <div>{item.author}</div>
+      <div>{item.message}</div>
+    </div>
+  ));
 
   return (
     <div>
