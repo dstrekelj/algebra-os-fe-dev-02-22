@@ -5,13 +5,13 @@ import { useState } from "react";
 
 export function ChatRoomPage(props) {
   const [formState, setFormState] = useState({ message: '' });
+  const [messages, setMessages] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (formState.message !== '') {
-      // Send message
-      console.log(formState);
+      setMessages((state) => [...state, formState]);
     }
   }
   
@@ -21,6 +21,8 @@ export function ChatRoomPage(props) {
           [event.target.name]: event.target.value,
     }));
   }
+
+  console.log(messages);
 
   return (
     <div>
