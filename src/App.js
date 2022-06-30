@@ -4,7 +4,6 @@ import Button from "./components/Button";
 import FormError from "./components/FormError";
 import FormMessage from "./components/FormMessage";
 import { User } from "./components/User";
-import { Counter } from "./components/Counter";
 import { useState } from "react";
 
 function App() {
@@ -41,8 +40,6 @@ function App() {
 
   return (
     <div>
-      <Counter initialValue={0} />
-      <Counter initialValue={100} />
       {isSignedIn && <Button type="button" onClick={signOut}>Sign out</Button>}
       {isSignedIn && <User src="/avatar.svg" username={user.username} />}
       {!isSignedIn && <form className="form" onSubmit={handleSubmit}>
