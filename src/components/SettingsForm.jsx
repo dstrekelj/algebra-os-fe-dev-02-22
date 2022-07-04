@@ -4,12 +4,13 @@ import { useState } from "react";
 
 export function SettingsForm(props) {
   const [formState, setFormState] = useState({
-    username: props.user.username,
+    displayName: props.user.username,
+    textColor: '',
   });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formState);
+    props.onSubmit(formState);
   }
 
   const handleChange = (event) => {
@@ -22,11 +23,19 @@ export function SettingsForm(props) {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="form-field">
-        <InputElement name="username"
-          label="Username"
+        <InputElement name="displayName"
+          label="Display name"
           type="text"
           onChange={handleChange}
-          value={formState.username}
+          value={formState.displayName}
+        />
+      </div>
+      <div className="form-field">
+        <InputElement name="textColor"
+          label="Text color"
+          type="text"
+          onChange={handleChange}
+          value={formState.textColor}
         />
       </div>
       <div className="form-field">
