@@ -2,13 +2,11 @@ import Button from "../components/Button";
 import { InputElement } from "../components/InputElement";
 import { User } from "../components/User";
 import { useState } from "react";
+import { SettingsForm } from "../components/SettingsForm";
 
 export function ChatRoomPage(props) {
   const [formState, setFormState] = useState({ message: '' });
   const [messages, setMessages] = useState([]);
-  const [settingsFormState, setSettingsFormState] = useState({
-    username: props.user.username,
-  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,18 +27,6 @@ export function ChatRoomPage(props) {
     }));
   }
 
-  const handleSettingsSubmit = (event) => {
-    event.preventDefault();
-    console.log(settingsFormState);
-  }
-
-  const handleSettingsChange = (event) => {
-    setSettingsFormState((state) => ({
-      ...state,
-      [event.target.name]: event.target.value,
-    }));
-  }
-
   const messageElements = messages.map((item, index) => (
     <div key={index}>
       <div>{item.author}</div>
@@ -53,19 +39,7 @@ export function ChatRoomPage(props) {
       <Button type="button" onClick={props.onSignOut}>Sign out</Button>
       <User src="/avatar.svg" username={props.user.username} />
 
-      <form className="form" onSubmit={handleSettingsSubmit}>
-        <div className="form-field">
-          <InputElement name="username"
-            label="Username"
-            type="text"
-            onChange={handleSettingsChange}
-            value={settingsFormState.username}
-          />
-        </div>
-        <div className="form-field">
-          <Button type="submit">Update</Button>
-        </div>
-      </form>
+      <SettingsForm user={props.user} />
 
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-field">
