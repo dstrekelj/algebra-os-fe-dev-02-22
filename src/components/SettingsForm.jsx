@@ -7,6 +7,7 @@ export function SettingsForm(props) {
     displayName: props.user.username,
     textColor: '',
     backgroundColor: '',
+    showAvatar: false,
   });
 
   const handleSubmit = (event) => {
@@ -16,9 +17,17 @@ export function SettingsForm(props) {
   }
 
   const handleChange = (event) => {
+    let value = undefined;
+
+    if (event.target.type === "checkbox") {
+      value = event.target.checked;
+    } else {
+      value = event.target.value;
+    }
+
     setFormState((state) => ({
       ...state,
-      [event.target.name]: event.target.value,
+      [event.target.name]: value,
     }));
   }
 
@@ -56,6 +65,17 @@ export function SettingsForm(props) {
           <option value="red">Red</option>
           <option value="white">White</option>
         </select>
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            name="showAvatar"
+            onChange={handleChange}
+            checked={formState.showAvatar}
+          />
+          Show avatar
+        </label>
       </div>
       <div className="form-field">
         <Button type="submit">Update</Button>
