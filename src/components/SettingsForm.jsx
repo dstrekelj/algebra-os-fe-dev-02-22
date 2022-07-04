@@ -1,6 +1,8 @@
 import Button from "../components/Button";
 import { InputElement } from "../components/InputElement";
 import { useState } from "react";
+import { SelectElement } from "./SelectElement";
+import { CheckboxElement } from "./CheckboxElement";
 
 export function SettingsForm(props) {
   const [formState, setFormState] = useState({
@@ -50,32 +52,28 @@ export function SettingsForm(props) {
         />
       </div>
       <div className="form-field">
-        <label htmlFor="background-color">
-          Background color
-        </label>
-        <select id="background-color"
+        <SelectElement
+          label="Background color"
           name="backgroundColor"
           onChange={handleChange}
           value={formState.backgroundColor}
-        >
-          <option value="black">Black</option>
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="">None</option>
-          <option value="red">Red</option>
-          <option value="white">White</option>
-        </select>
+          options={[
+            { value: "black", label: "Black" },
+            { value: "blue", label: "Blue" },
+            { value: "green", label: "Green" },
+            { value: "", label: "None" },
+            { value: "red", label: "Red" },
+            { value: "white", label: "White" },
+          ]}
+        />
       </div>
-      <div>
-        <label>
-          <input
-            type="checkbox"
-            name="showAvatar"
-            onChange={handleChange}
-            checked={formState.showAvatar}
-          />
-          Show avatar
-        </label>
+      <div className="form-field">
+        <CheckboxElement
+          label="Show avatar"
+          name="showAvatar"
+          onChange={handleChange}
+          checked={formState.showAvatar}
+        />
       </div>
       <div className="form-field">
         <Button type="submit">Update</Button>

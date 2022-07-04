@@ -9,13 +9,15 @@ export function Message(props) {
   };
 
   const author = props.settings.displayName || props.author;
-  const avatarSrc = props.settings.avatarUrl || "/avatar.svg";
+  const avatarSrc = props.settings.showAvatar
+    ? props.settings.avatarUrl
+    : "";
 
   return (
     <div className="message" style={style}>
-      {props.settings.showAvatar && <div className="message__avatar">
+      <div className="message__avatar">
         <Avatar username={author} src={avatarSrc} />
-      </div>}
+      </div>
       <div className="message__author">{author}</div>
       <div className="message__text">{props.message}</div>
     </div>
