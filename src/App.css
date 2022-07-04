@@ -31,3 +31,12 @@ input[type="radio"]:checked {
 input[type="radio"] {
   border-radius: 100%;
 }
+
+.message-list {
+  width: calc(100% - 32px);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.message-list .message {
+  margin: 16px 0;
+}
