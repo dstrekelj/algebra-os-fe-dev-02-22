@@ -38,7 +38,10 @@ export function ChatRoomPage(props) {
 
   const messageElements = messages.map((item, index) => (
     <div key={index}
-      style={{ color: item.settings.textColor || "black"}}
+      style={{
+        backgroundColor: item.settings.backgroundColor || "transparent",
+        color: item.settings.textColor || "black"
+      }}
     >
       <div>{item.settings.displayName || item.author}</div>
       <div>{item.message}</div>

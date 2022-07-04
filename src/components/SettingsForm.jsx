@@ -6,10 +6,12 @@ export function SettingsForm(props) {
   const [formState, setFormState] = useState({
     displayName: props.user.username,
     textColor: '',
+    backgroundColor: '',
   });
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(formState);
     props.onSubmit(formState);
   }
 
@@ -37,6 +39,23 @@ export function SettingsForm(props) {
           onChange={handleChange}
           value={formState.textColor}
         />
+      </div>
+      <div className="form-field">
+        <label htmlFor="background-color">
+          Background color
+        </label>
+        <select id="background-color"
+          name="backgroundColor"
+          onChange={handleChange}
+          value={formState.backgroundColor}
+        >
+          <option value="black">Black</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="">None</option>
+          <option value="red">Red</option>
+          <option value="white">White</option>
+        </select>
       </div>
       <div className="form-field">
         <Button type="submit">Update</Button>

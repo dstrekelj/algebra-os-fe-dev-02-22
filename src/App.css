@@ -4,3 +4,12 @@
 .form-field + .form-field {
   margin-top: 16px;
 }
+
+select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid teal;
+  min-height: 32px;
+  padding: 0 8px;
+}
