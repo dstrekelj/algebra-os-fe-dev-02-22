@@ -7,7 +7,7 @@
     "a c";
   column-gap: 8px;
   border-bottom: 1px solid #ddd;
-  padding: 16px 0;
+  padding: 16px;
 }
 .message__avatar {
   grid-area: a;
