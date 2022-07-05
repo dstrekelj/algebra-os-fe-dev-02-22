@@ -1,0 +1,15 @@
+.message-form {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 8px; 
+  align-items: flex-end;
+}
+.message-form__field:first-of-type {
+  flex: 1 1 auto;
+}
+.message-form__field:first-of-type input {
+  width: 100%;
+}
+.message-form__field:last-of-type {
+  flex: 0 0 auto;
+}
