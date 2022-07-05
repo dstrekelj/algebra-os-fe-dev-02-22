@@ -20,19 +20,29 @@ export function ColorElement(props) {
   }
 
   return (
-    <div className="color-element">
-      <span>{props.label}</span>
-      <span>{value}</span>
-      <button type="button" onClick={openColorPicker}>
-        Color picker
-      </button>
-      <input
-        ref={inputRef}
-        name={props.name}
-        type="color"
-        onChange={updateValue}
-        value={props.value}
-      />
-    </div>
+    <label className="color-element">
+      <div className="color-element__label">
+        {props.label}
+      </div>
+      <div
+        className="color-element__input"
+        onClick={openColorPicker}
+      >
+        <span className="color-element__input-value">
+          {value}
+        </span>
+        <div
+          className="color-element__input-color"
+          style={{ backgroundColor: value }}
+        />
+        <input
+          ref={inputRef}
+          name={props.name}
+          type="color"
+          onChange={updateValue}
+          value={props.value}
+        />
+      </div>
+    </label>
   );
 }

@@ -45,9 +45,9 @@ export function SettingsForm(props) {
         />
       </div>
       <div className="form-field">
-        <InputElement name="textColor"
+        <ColorElement
           label="Text color"
-          type="text"
+          name="textColor"
           onChange={handleChange}
           value={formState.textColor}
         />
@@ -74,14 +74,6 @@ export function SettingsForm(props) {
           name="showAvatar"
           onChange={handleChange}
           checked={formState.showAvatar}
-        />
-      </div>
-      <div className="form-field">
-        <ColorElement
-          label="Text color"
-          name="textColor"
-          onChange={handleChange}
-          value={formState.textColor}
         />
       </div>
       <div className="form-field">
