@@ -1,7 +1,20 @@
+:root {
+  --color-primary: #008080;
+  --color-primary-dark-1: #000745;
+  --color-primary-dark-2: #003863;
+  --color-primary-light-1: #66B788;
+  --color-primary-light-2: #CDE8CC;
+  --color-primary-text: #fff;
+  --color-text: #222;
+  --color-error: red;
+}
+
 html {
   font-size: 62.5%;
   font-family: monospace;
 }
+
 body {
-  font-size: 1.6rem;
+  font-size: 2rem;
+  color: var(--color-text);
 }

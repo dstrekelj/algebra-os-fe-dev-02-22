@@ -1,3 +1,5 @@
+import "./ChatRoomPage.css";
+
 import Button from "../components/Button";
 import { InputElement } from "../components/InputElement";
 import { User } from "../components/User";
@@ -47,7 +49,7 @@ export function ChatRoomPage(props) {
   ));
 
   return (
-    <div>
+    <div className="chat-room-page">
       <Button type="button" onClick={props.onSignOut}>Sign out</Button>
       <User src="/avatar.svg" username={props.user.username} />
 

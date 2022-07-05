@@ -1,0 +1,18 @@
+.sign-in-form {
+  position: relative;
+  border: 1px solid var(--color-primary-light-1);
+  padding: 48px;
+}
+.sign-in-form__field + .sign-in-form__field {
+  margin-top: 16px;
+}
+.sign-in-form__field-action {
+  text-align: right;
+}
+.sign-in-form__error {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
