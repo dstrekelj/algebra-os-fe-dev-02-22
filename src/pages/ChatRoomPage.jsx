@@ -50,25 +50,35 @@ export function ChatRoomPage(props) {
 
   return (
     <div className="chat-room-page">
-      <Button type="button" onClick={props.onSignOut}>Sign out</Button>
-      <User src="/avatar.svg" username={props.user.username} />
-
-      <SettingsForm user={props.user} onSubmit={updateSettings} />
-
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="form-field">
-          <InputElement name="message"
-            label="Message"
-            type="text"
-            onChange={handleChange}
-            value={formState.message} />
+      <div className="chat-room-page__settings">
+        <div className="chat-room-page__settings-row">
+          <User src="/avatar.svg" username={props.user.username} />
         </div>
-        <div className="form-field">
-          <Button type="submit">Send</Button>
+        <div className="chat-room-page__settings-row">
+          <Button type="button" onClick={props.onSignOut}>Sign out</Button>
         </div>
-      </form>
-      <div className="message-list">
-        {messageElements}
+        <div className="chat-room-page__settings-row">
+          <SettingsForm user={props.user} onSubmit={updateSettings} />
+        </div>
+      </div>
+      <div className="chat-room-page__chat">
+        <div className="chat-room-page__chat-message-list">
+          {messageElements}
+        </div>
+        <div className="chat-room-page__chat-message-form">
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="form-field">
+              <InputElement name="message"
+                label="Message"
+                type="text"
+                onChange={handleChange}
+                value={formState.message} />
+            </div>
+            <div className="form-field">
+              <Button type="submit">Send</Button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

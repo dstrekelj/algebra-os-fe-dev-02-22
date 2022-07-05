@@ -1,0 +1,26 @@
+.chat-room-page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-flow: row nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+}
+.chat-room-page__settings {
+  flex: 0 0 240px;
+  background-color: var(--color-primary-light-2);
+}
+.chat-room-page__chat {
+  flex: 1 1 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+}
+.chat-room-page__chat-message-list {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+.chat-room-page__chat-message-form {
+  flex: 0 0 auto;
+}
