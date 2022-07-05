@@ -3,6 +3,7 @@ import { InputElement } from "../components/InputElement";
 import { useState } from "react";
 import { SelectElement } from "./SelectElement";
 import { CheckboxElement } from "./CheckboxElement";
+import { ColorElement } from "./ColorElement";
 
 export function SettingsForm(props) {
   const [formState, setFormState] = useState({
@@ -73,6 +74,14 @@ export function SettingsForm(props) {
           name="showAvatar"
           onChange={handleChange}
           checked={formState.showAvatar}
+        />
+      </div>
+      <div className="form-field">
+        <ColorElement
+          label="Text color"
+          name="textColor"
+          onChange={handleChange}
+          value={formState.textColor}
         />
       </div>
       <div className="form-field">
