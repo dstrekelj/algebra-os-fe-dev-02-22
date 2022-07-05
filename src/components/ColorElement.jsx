@@ -20,7 +20,7 @@ export function ColorElement(props) {
   }
 
   return (
-    <div>
+    <div className="color-element">
       <span>{props.label}</span>
       <span>{value}</span>
       <button type="button" onClick={openColorPicker}>

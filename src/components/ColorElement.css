@@ -1,0 +1,7 @@
+.color-element {
+  position: relative;
+}
+.color-element input {
+  position: absolute;
+  visibility: hidden;
+}
