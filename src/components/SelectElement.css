@@ -2,7 +2,9 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid teal;
+  border: 1px solid var(--color-primary);
   min-height: 32px;
   padding: 0 8px;
+  width: 100%;
+  background-color: white;
 }

@@ -9,6 +9,7 @@
 .chat-room-page__settings {
   flex: 0 0 240px;
   background-color: var(--color-primary-light-2);
+  text-align: center;
 }
 .chat-room-page__chat {
   flex: 1 1 100%;
