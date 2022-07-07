@@ -45,7 +45,7 @@ export function ChatRoomPage(props) {
           <Button type="button" onClick={props.onSignOut}>Sign out</Button>
         </div>
         <div className="chat-room-page__settings-row">
-          <SettingsForm user={props.user} onSubmit={updateSettings} />
+          <SettingsForm onSubmit={updateSettings} />
         </div>
       </div>
       <div className="chat-room-page__chat">

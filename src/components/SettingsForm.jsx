@@ -1,13 +1,16 @@
 import Button from "../components/Button";
 import { InputElement } from "../components/InputElement";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { SelectElement } from "./SelectElement";
 import { CheckboxElement } from "./CheckboxElement";
 import { ColorElement } from "./ColorElement";
+import { AppContext } from "../contexts/AppContext";
 
 export function SettingsForm(props) {
+  const { user } = useContext(AppContext);
+
   const [formState, setFormState] = useState({
-    displayName: props.user.username,
+    displayName: user.username,
     textColor: '',
     backgroundColor: '',
     showAvatar: false,

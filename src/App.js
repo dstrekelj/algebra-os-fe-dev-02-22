@@ -1,18 +1,11 @@
 import "./App.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { SignInPage } from "./pages/SignInPage";
 import { ChatRoomPage } from "./pages/ChatRoomPage";
+import { AppContext } from "./contexts/AppContext";
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  const storeUser = (user) => {
-    setUser(user);
-  }
-
-  const clearUser = () => {
-    setUser(null);
-  }
+  const {user, clearUser, storeUser} = useContext(AppContext);
 
   const isSignedIn = user !== null;
 
