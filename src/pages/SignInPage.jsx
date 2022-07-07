@@ -1,10 +1,14 @@
 import "./SignInPage.css";
 
 import { SignInForm } from "../components/SignInForm";
+import { useContext } from "react";
+import { AppContext } from "../contexts/AppContext";
 
-export function SignInPage(props) {
+export function SignInPage() {
+  const {storeUser} = useContext(AppContext);
+
   const handleSubmit = (formState) => {
-    props.onSignIn(formState);
+    storeUser(formState);
   }
 
   return (
