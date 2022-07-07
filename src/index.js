@@ -5,13 +5,28 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AppProvider } from "./contexts/AppContext";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+function TermsOfServicePage() {
+  return (
+    <div>
+      <h1>Terms of Service</h1>
+      <Link to="/">Back to application</Link>
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
+    <BrowserRouter>
+      <AppProvider>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/tos" element={<TermsOfServicePage />} />
+        </Routes>
+      </AppProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
 
